@@ -1,0 +1,54 @@
+{
+  "name": "yargs-2302-build-with-vite",
+  "version": "1.2.0",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "hung-cybo"
+  },
+  "description": "vite-build-with-yargs",
+  "scripts": {
+    "prebuild": "yarn clean",
+    "build": "vite build --force",
+    "lint": "run-p -l lint:*",
+    "lint:eslint": "eslint --ext .js,.mjs,.cjs,.ts,.mts,.cts ./",
+    "fix": "run-p fix:*",
+    "fix:lint": "run-s 'lint:eslint --fix'",
+    "clean": "rimraf lib bin artifacts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hung-cybo/yargs-2302-build-with-vite"
+  },
+  "files": [
+    "lib",
+    "dist",
+    "cli.js"
+  ],
+  "keywords": [
+    "vite-build-with-yargs"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
+  "bin": {
+    "cli": "cli.js"
+  },
+  "devDependencies": {
+    "@cybozu/eslint-config": "^18.0.0",
+    "@types/node": "^18.13.0",
+    "@types/yargs": "^17.0.13",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.33.0",
+    "rimraf": "^3.0.2",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "typescript": "^4.8.4",
+    "vite": "^4.0.4"
+  },
+  "dependencies": {
+    "yargs": "^17.6.2"
+  }
+}
