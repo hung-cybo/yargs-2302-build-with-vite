@@ -10,13 +10,13 @@
   },
   "description": "vite-build-with-yargs",
   "scripts": {
-    "prebuild": "yarn clean",
+    "prebuild": "npm run clean",
     "build": "vite build --force",
     "lint": "run-p -l lint:*",
     "lint:eslint": "eslint --ext .js,.mjs,.cjs,.ts,.mts,.cts ./",
     "fix": "run-p fix:*",
     "fix:lint": "run-s 'lint:eslint --fix'",
-    "clean": "rimraf lib bin artifacts"
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
@@ -41,7 +41,6 @@
     "@cybozu/eslint-config": "^18.0.0",
     "@types/node": "^18.13.0",
     "@types/yargs": "^17.0.13",
-    "cross-env": "^7.0.3",
     "eslint": "^8.33.0",
     "rimraf": "^3.0.2",
     "rollup-plugin-auto-external": "^2.0.0",
